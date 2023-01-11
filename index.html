@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Form Validation With Regexone</h1>
+        <h2>Get It now</h2>
+        <h3>Constraint Validation API</h3>
+      </header>
+      <main>
+        <!--
+          Form elements' attributes
+          id
+          name
+          type
+          value
+          checked
+          selected
+          inputmode
+          enterkeyhint
+          autocomplete
+          placeholder
+          required
+          readonly
+          disabled
+          min
+          max
+          step
+          minlength
+          maxlength
+          pattern
+          
+          novalidate - overrides checkValidity and reportValidity
+        -->
+        <form name="sampleForm" action="#" method="POST" autocomplete="off" >
+          <p>
+            <label for="fullname">Full Name</label>
+            <input
+              type="text"
+              inputmode="text"
+              id="fullname"
+              name="fullname"
+              enterkeyhint="next"
+              autocomplete="off"
+              placeholder="Enter your full name"
+              required
+            />
+            <span class="instructions"><span class="errMessage"></span></span>
+          </p>
+          <p>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              inputmode="email"
+              id="email"
+              name="email"
+              enterkeyhint="next"
+              autocomplete="off"
+              required
+              placeholder="Enter your email address"
+            />
+            <span class="instructions"><span class="errMessage"></span></span>
+          </p>
+          <p>
+            <label for="pass">Password</label>
+            <input
+              type="password"
+              id="pass"
+              name="pass"
+              enterkeyhint="send"
+              autocomplete="off"
+              maxlength="20"
+              minlength="8"
+              required
+            />
+            <span class="instructions"
+              ><span class="errMessage"></span>
+              <span class="upper">At least ONE uppercase letter</span>
+              <span class="lower">At least ONE lowercase letter</span>
+              <span class="num">At least ONE number</span>
+              <span class="len">At least 10 characters long</span>
+              <span class="invalid"
+                >Only allowed special characters are ! @ # $ % ^ & * . , ? ; :
+              </span>
+            </span>
+          </p>
+          <p>
+            <label for="cell">Cellphone</label>
+            <input
+              type="text"
+              inputmode="numeric"
+              id="cell"
+              name="cell"
+              enterkeyhint="next"
+              autocomplete="off"
+              placeholder="include your area code"
+              pattern="[\d]{7,14}"
+            /><!-- input type=number adds the stepper -->
+            <span class="instructions"><span class="errMessage"></span></span>
+          </p>
+          <p>
+            <label for="regcode">One-time-code</label>
+            <input
+              id="regcode"
+              autocomplete="off"
+              type="text"
+              enterkeyhint="next"
+              required
+              minlength="8"
+              maxlength="8"
+              title="Enter your one time code here"
+            />
+            <span class="instructions"><span class="errMessage"></span></span>
+          </p>
+          <p>
+            <label for="pets">Number of Pets</label>
+            <input
+              type="number"
+              inputmode="numeric"
+              id="pets"
+              name="pets"
+              enterkeyhint="next"
+              autocomplete="off"
+              min="0"
+              max="50"
+              step="2"
+            /><!-- input type=number adds the stepper -->
+            <span class="instructions"><span class="errMessage"></span></span>
+          </p>
+          <p>
+            <button id="btnSend">Send</button>
+          </p>
+        </form>
+      </main>
+    <!-- js -->
+    <script src="main.js"></script>
+</body>
+</html>
